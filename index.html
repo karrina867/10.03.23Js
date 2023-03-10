@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        .start{
+            background-color: black;
+            color:white;
+        }
+    </style>
+    <div class="start">
+        <h1>Learn more about countries</h1>
+    </div>
+    <div>
+        <input type="text" class="form-control" placeholder="Country" aria-label="Username" aria-describedby="basic-addon1">
+        <a href="#">Countries</a>
+    </div>
+    <div>
+        <h2>Достопримечательности</h2>
+        <h2>Текущее время</h2>
+        <h2>Страны соседи</h2>
+        <h2>Язык</h2>
+    </div>
+    <script>
+const options = {
+	method: 'GET',
+	headers: {
+		'X-RapidAPI-Key': 'e1232575a8msh1cfa4b24c36f2c7p13fa6ajsnffeafb91ac70',
+		'X-RapidAPI-Host': 'wft-geo-db.p.rapidapi.com'
+	}
+};
+fetch('https://wft-geo-db.p.rapidapi.com/v1/geo/adminDivisions', options)
+	.then(response => response.json())
+	.then(response => console.log(response))
+	.catch(err => console.error(err));
+    </script>
+</body>
+</html>
